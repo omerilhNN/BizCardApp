@@ -33,6 +33,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Shape
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.tooling.preview.Preview
 import com.omrilhn.bizcardapp.ui.theme.BizCardAppTheme
@@ -77,10 +78,35 @@ fun CreateBizCard()
                     horizontalAlignment = Alignment.CenterHorizontally){
 
                     CreateImageProfile()
-                    Divider()
+                    Divider(thickness = 0.5.dp, color = Color.Blue)
+                    CreateInfo()
                 }
-
             }
+    }
+}
+
+@Composable
+private fun CreateInfo() {
+    Column(modifier = Modifier.padding(5.dp))
+    {
+        Text(
+            text = "Omer I.",
+            style = MaterialTheme.typography.headlineLarge,
+            color = MaterialTheme.colorScheme.primary,
+            textAlign = TextAlign.Center
+        )
+
+        Text(
+            text = "Android Compose Programmer",
+            modifier = Modifier.padding(3.dp),
+            style = MaterialTheme.typography.bodyMedium
+        )
+
+        Text(
+            text = "@theilhnCompose",
+            modifier = Modifier.padding(3.dp),
+            style = MaterialTheme.typography.bodyMedium
+        )
     }
 }
 
